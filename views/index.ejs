@@ -1,0 +1,22 @@
+<%- include('partials/header.ejs') %>
+<div class="container1">
+  <h1>Ooi Stupid Bloggers</h1>
+  <p>
+    Create, Edit and Delete blog posts for fun and if its readable try reading,
+    that is if you want to! Cheers🍻
+  </p>
+</div>
+<div class="container2">
+  <h2>Blogs</h2>
+  <div class="posts-container">
+    <% posts.forEach((post) => { %>
+    <div class="posts">
+      <img src="/images/<%= post.id %>.jpg" alt="" />
+      <h3><%= post.title %></h3>
+      <p><%= post.content.substring(0, 100) %>...</p>
+      <a href="/post/<%= post.id %>"><button>Read More</button></a>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>
